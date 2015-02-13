@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
     reactify = require('reactify'),
@@ -18,14 +20,19 @@ function swallowError(error) {
 
 gulp.task('less', function () {
     gulp.src('./app/css/**/*.less')
+        .on('error', swallowError)
         .pipe(less({
-            //paths: [path.join(__dirname, 'less', 'includes')]
+            paths: [
+                path.join(__dirname, 'less', 'includes'),
+                './node_modules'
+            ]
         }))
         .pipe(gulp.dest('./dest/css'));
 });
 
 gulp.task('browserify', function() {
-    gulp.src('./app/js/main.js')
+    gulp.src('./app/js/main.jsx')
+        .on('error', swallowError)
         .pipe(browserify({
                 transform: ['reactify'],
                 debug: true,
@@ -43,7 +50,6 @@ gulp.task('default', ['less', 'browserify'], function () {
 gulp.task('production', ['default'], function (){
     gulp.src("./dest/bundle.js")
         .pipe(uglify())
-        //.pipe(jscrush())
         .pipe(rename('bundle.min.js'))
         .pipe(gulp.dest('./dest/'))
 
@@ -52,6 +58,6 @@ gulp.task('production', ['default'], function (){
 
 
 gulp.task('watch', ['default'], function () {
-    gulp.watch('./app/js/*', ['default'])
-    gulp.watch('./app/css/*', ['default'])
+    gulp.watch('./app/js/**', ['default'])
+    gulp.watch('./app/css/**', ['default'])
 });

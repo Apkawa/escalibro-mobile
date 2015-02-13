@@ -63,6 +63,7 @@ var CommentBox = React.createClass({
     }
 });
 var _d = data;
+
 React.render(
     <CommentBox data = {_d} />,
     document.getElementById('content')

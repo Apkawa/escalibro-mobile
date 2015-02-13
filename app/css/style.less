@@ -1,5 +1,25 @@
-@import './node_modules/material-ui/src/less/scaffolding.less';
 
-//@import "my-custom-overrides.less";
 
-@import "./node_modules/material-ui/src/less/components.less";
+@import './material-ui/src/less/scaffolding.less';
+// Overrides
+@primary-1-color: @brown-400;
+
+@import "./material-ui/src/less/components.less";
+
+
+
+.logo {
+  cursor: pointer;
+  .mui-font-style-headline;
+  .mui-text-full-white;
+  line-height: @app-bar-height;
+  .mui-font-weight-light;
+  background-color: @primary-1-color;
+  padding-left: @desktop-gutter;
+  padding-top: 0;
+  margin-bottom: @desktop-gutter-mini;
+}
+
+.mui-app-canvas {
+  height: 100%;
+}
