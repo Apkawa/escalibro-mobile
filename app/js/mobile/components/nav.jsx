@@ -1,8 +1,7 @@
 var React = require('react'),
     mui = require('material-ui'),
     navigate = require('react-mini-router').navigate,
-    _gt = require('../i18n/gettext'),
-    LeftNav = mui.LeftNav
+    _gt = require('../i18n/gettext')
     ;
 
 var menuItems = [
@@ -18,7 +17,7 @@ var Nav = React.createClass({
                     Escalibro
             </div>);
         return (
-            <LeftNav header={header} ref="_LeftNav" docked={false}
+            <mui.LeftNav header={header} ref="_LeftNav" docked={false}
                 menuItems={menuItems} onChange={this.onChange}/>
         );
     },

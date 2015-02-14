@@ -1,22 +1,25 @@
 var React = require('react'),
     mui = require('material-ui'),
-    AppBar = mui.AppBar,
-    AppCanvas = mui.AppCanvas,
     Nav = require('./nav.jsx')
     ;
 
 var Container = React.createClass({
     render: function () {
-        var title = <span className='app-bar-title'>{this.props.title}</span>
+        var title = '';
+        if (this.props.title) {
+            title = this.props.title;
+        }
         return (
-            <AppCanvas predefinedLayout={1}>
-                <AppBar title={title} onMenuIconButtonTouchTap={this._showleftNav}>
-                </AppBar>
-                <Nav  ref="LeftNav"/>
+            <mui.AppCanvas predefinedLayout={1}>
+                <mui.AppBar
+                    title={title}
+                    onMenuIconButtonTouchTap={this._showleftNav}>
+                </mui.AppBar>
+                <Nav ref="LeftNav"/>
                 <div className="mui-app-content-canvas">
                     {this.props.children}
                 </div>
-            </AppCanvas>
+            </mui.AppCanvas>
         );
     },
     _showleftNav: function () {
