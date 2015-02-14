@@ -21,6 +21,7 @@ Look documentation http://docs.phonegap.com/en/edge/index.html
     npm install -g phonegap cordova
     gulp mobile default
     cd phonegap
+    cordova platform add android
     cordova emulate android
 
 
