@@ -21,10 +21,11 @@
     "gulp-uglify": "^1.1.0"
   },
   "dependencies": {
-    "react": "^0.12.2",
+    "lodash": "^3.2.0",
     "material-ui": "^0.6.1",
+    "react": "^0.12.2",
+    "react-mini-router": "^1.1.0",
     "react-tap-event-plugin": "^0.1.4",
-    "routie": "0.0.1",
-    "react-mini-router": "^1.1.0"
+    "routie": "0.0.1"
   }
 }

@@ -1,12 +1,13 @@
 var React = require('react'),
     mui = require('material-ui'),
     navigate = require('react-mini-router').navigate,
+    _gt = require('../i18n/gettext'),
     LeftNav = mui.LeftNav
     ;
 
 var menuItems = [
-    {text: "Settings", route: '/message/Settings'},
-    {text: "Logout", route: '/'}
+    {text: _gt("Books"), route: '/books/'},
+    {text: _gt("Authors"), route: '/authors/'}
 ];
 
 var Nav = React.createClass({

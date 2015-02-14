@@ -61,3 +61,7 @@ gulp.task('watch', ['default'], function () {
     gulp.watch('./app/js/**', ['default'])
     gulp.watch('./app/css/**', ['default'])
 });
+
+// TODO collect
+// https://gist.github.com/mamchenkov/3690981
+// find ./app -iname '*.js' -o -iname '*.jsx' | xargs xgettext --language=javascript --from-code=utf-8 --keyword=_gt:1

@@ -7,9 +7,10 @@ var React = require('react'),
 
 var Container = React.createClass({
     render: function () {
+        var title = <span className='app-bar-title'>{this.props.title}</span>
         return (
             <AppCanvas predefinedLayout={1}>
-                <AppBar title={this.props.title} onMenuIconButtonTouchTap={this._showleftNav}>
+                <AppBar title={title} onMenuIconButtonTouchTap={this._showleftNav}>
                 </AppBar>
                 <Nav  ref="LeftNav"/>
                 <div className="mui-app-content-canvas">
