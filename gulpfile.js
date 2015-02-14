@@ -24,11 +24,13 @@ function swallowError(error) {
 var options = {
     less: './app/css/**/*.less',
     js: './app/js/main.jsx',
-    phonegap_js: './app/js/phonegap_init.js',
     html: './app/*.html',
     dest: './dest/',
-    phonegap_dest: './phonegap/www/'
-}
+    phonegap_js: './app/js/phonegap_init.js',
+    phonegap_dest: './phonegap/www/',
+    crosswalk_js:'./app/js/phonegap_init.js',
+    crosswalk_dest: './crosswalk/assets/www/'
+};
 
 gulp.task('html', function () {
     gulp.src(options.html)
@@ -69,9 +71,17 @@ gulp.task('default', ['css', 'browserify', 'html'], function () {
     console.log(options)
 });
 
-gulp.task('mobile', function () {
+gulp.task('phonegap', function () {
     options.js = options.phonegap_js;
     options.dest = options.phonegap_dest;
+});
+
+gulp.task('crosswalk', function () {
+    options.js = options.crosswalk_js;
+    options.dest = options.crosswalk_dest;
+
+    gulp.src('./app/js/assets/cordova.js')
+        .pipe(gulp.dest(options.dest))
 });
 
 gulp.task('production', ['default'], function () {

@@ -3,3 +3,19 @@ node_modules/
 dest/
 phonegap/www/
 phonegap/platforms/
+crosswalk/assets/www/
+# Non-project-specific build files:
+
+build.xml
+local.properties
+/gradlew
+/gradlew.bat
+/gradle
+# Ant builds
+ant-built
+ant-gen
+# Eclipse builds
+gen
+out
+# Gradle builds
+/build
